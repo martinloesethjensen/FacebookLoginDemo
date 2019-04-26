@@ -15,6 +15,7 @@
 		49BF1023226F3BD200EF38B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BF1021226F3BD200EF38B2 /* LaunchScreen.storyboard */; };
 		49BF102E226F3BD200EF38B2 /* FacebookLoginDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF102D226F3BD200EF38B2 /* FacebookLoginDemoTests.swift */; };
 		49BF1039226F3BD200EF38B2 /* FacebookLoginDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF1038226F3BD200EF38B2 /* FacebookLoginDemoUITests.swift */; };
+		49CDCCC2227318E600E6809A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49CDCCC1227318E600E6809A /* GoogleService-Info.plist */; };
 		B322441D3E49A5BC92E8EEA3 /* Pods_FacebookLoginDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7287DEC04F9372971A9212 /* Pods_FacebookLoginDemoTests.framework */; };
 		DB2916B85DDC2D8578F19CD7 /* Pods_FacebookLoginDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3D49F18A5C51D131A747EB /* Pods_FacebookLoginDemoUITests.framework */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		49BF1034226F3BD200EF38B2 /* FacebookLoginDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FacebookLoginDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BF1038226F3BD200EF38B2 /* FacebookLoginDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginDemoUITests.swift; sourceTree = "<group>"; };
 		49BF103A226F3BD200EF38B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49CDCCC1227318E600E6809A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B3D49F18A5C51D131A747EB /* Pods_FacebookLoginDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookLoginDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B74DBC2E6B35AEFA40AA931 /* Pods-FacebookLoginDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookLoginDemoTests.release.xcconfig"; path = "Target Support Files/Pods-FacebookLoginDemoTests/Pods-FacebookLoginDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C5F7B0491BDD0E17A36A658 /* Pods-FacebookLoginDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookLoginDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-FacebookLoginDemoUITests/Pods-FacebookLoginDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				49BF101C226F3BD000EF38B2 /* Main.storyboard */,
 				49BF101F226F3BD200EF38B2 /* Assets.xcassets */,
 				49BF1021226F3BD200EF38B2 /* LaunchScreen.storyboard */,
+				49CDCCC1227318E600E6809A /* GoogleService-Info.plist */,
 				49BF1024226F3BD200EF38B2 /* Info.plist */,
 			);
 			path = FacebookLoginDemo;
@@ -152,7 +155,6 @@
 				9C5F7B0491BDD0E17A36A658 /* Pods-FacebookLoginDemoUITests.debug.xcconfig */,
 				9DBB43C236F7BCBD68BBF9BC /* Pods-FacebookLoginDemoUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -275,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49BF1023226F3BD200EF38B2 /* LaunchScreen.storyboard in Resources */,
+				49CDCCC2227318E600E6809A /* GoogleService-Info.plist in Resources */,
 				49BF1020226F3BD200EF38B2 /* Assets.xcassets in Resources */,
 				49BF101E226F3BD000EF38B2 /* Main.storyboard in Resources */,
 			);
@@ -313,6 +316,9 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -325,6 +331,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
