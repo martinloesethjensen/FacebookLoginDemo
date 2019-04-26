@@ -12,6 +12,8 @@ import FacebookLogin
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,8 +46,10 @@ class ViewController: UIViewController {
             switch result {
             case .success(response: let response):
                 print("response: \(response)")
-                if let email = response.dictionaryValue!["email"] {
-                    print("email: \(email)")
+                
+                if let picture = response.dictionaryValue!["picture"] as? [String:Any], let data = picture["data"] as? [String: Any], let url = data["url"] as? String {
+                    //print(picture)
+                    self.image.load(url: URL(string: url)!)
                 }
                 break
             case .failed(let error):
@@ -59,5 +63,25 @@ class ViewController: UIViewController {
 
     }
 
+}
+
+extension UIImageView {
+    func load(url:URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data){
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Enum in swift
+enum Days {
+    case Monday
+    case Tuesday
 }
 
