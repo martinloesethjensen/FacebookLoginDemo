@@ -10,7 +10,6 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 import FirebaseAuth
-import FBSDKLoginKit
 
 class ViewController: UIViewController {
 
@@ -54,7 +53,9 @@ class ViewController: UIViewController {
                 // call facebook api to get user email and profile photo
                 
                 self.showUserInfo(token: token)
-                self.facebookStatus.backgroundColor = UIColor.green
+                DispatchQueue.main.async {
+                    self.facebookStatus.backgroundColor = UIColor.green
+                }
                 break
             case .failed(let error):
                 print("Login failed because of an error \(error.localizedDescription)")
@@ -64,8 +65,12 @@ class ViewController: UIViewController {
 
     @IBAction func facebookLogoutPressed(_ sender: Any) {
         self.manager.logOut()
-        FBSDKLoginManager().logOut()
-        try! Auth.auth().signOut()
+        do {
+            try Auth.auth().signOut()
+        } catch let signedOutError as NSError {
+            print(signedOutError)
+        }
+        
         loadView()
     }
     
@@ -80,12 +85,16 @@ class ViewController: UIViewController {
                 
                 if let picture = response.dictionaryValue!["picture"] as? [String:Any], let data = picture["data"] as? [String: Any], let url = data["url"] as? String {
                     //print(picture)
-                    self.image.load(url: URL(string: url)!)
-                    self.image.frame.size = CGSize(width: data["width"] as! Int, height: data["height"] as! Int)
+                    DispatchQueue.main.async {
+                        self.image.load(url: URL(string: url)!)
+                        self.image.frame.size = CGSize(width: data["width"] as! Int, height: data["height"] as! Int)
+                    }
                 }
                 
                 if let name = response.dictionaryValue!["name"] as? String{
-                    self.name.text = name
+                    DispatchQueue.main.async {
+                        self.name.text = name
+                    }
                 }
                 break
             case .failed(let error):
