@@ -65,6 +65,7 @@ class ViewController: UIViewController {
     @IBAction func facebookLogoutPressed(_ sender: Any) {
         self.manager.logOut()
         FBSDKLoginManager().logOut()
+        try! Auth.auth().signOut()
         loadView()
     }
     
